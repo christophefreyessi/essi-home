@@ -10,50 +10,106 @@
       line-height: 1;
       color: #1a1a1a;
     }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;          /* logos wrap to next line if needed */
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-row img {
+      height: 60px;             /* slightly smaller base size */
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    header h2 {
+      font-size: clamp(0.95rem, 2.5vw, 1.3rem);  /* fluid font size */
+      line-height: 1.4;
+      margin: 0.3em 0 0;
+    }
+
+    /* ── Agenda image ── */
+    .agenda-img {
+      display: block;
+      max-width: 100%;          /* never overflows the viewport */
+      height: auto;
+      margin-top: 1em;
+    }
+
+    /* ── Table (if used) ── */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;         /* horizontal scroll instead of overflow */
+      -webkit-overflow-scrolling: touch;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1em;
+      min-width: 400px;         /* prevents table from collapsing too much */
     }
+
     table, th, td {
       border: 1px solid #aaa;
     }
+
     th, td {
       padding: 0.6em;
       text-align: left;
     }
+
     th {
       background-color: #f0f0f0;
     }
+
     .highlight {
       color: #0055aa;
       font-weight: bold;
     }
+
+    /* ── Mobile breakpoint ── */
+    @media (max-width: 480px) {
+      .logo-row img {
+        height: 44px;           /* smaller logos on phones */
+      }
+
+      body {
+        margin: 6px;
+      }
+    }
   </style>
 </head>
+<body>
 
 <header>
-	<a href="fnsp2026.html">
-		<img src="images/FNSPeventLogoSmall.png" alt="FNSP_Logo" style="height:80px;">
-		<img src="images/chipstartEuLogo.jpg" alt="chipstartEu_Logo" style="height:80px;">
-		<img src="images/EuroCDPLogo.jpg" alt="euroCDP_Logo" style="height:80px;">
-		<img src="images/mscc-logo_full-colour.png" alt="mscc_Logo" style="height:80px;">
-		<img src="images/EN_Co-fundedbytheEU_RGB_POS.png" alt="EU_Logo" style="height:80px;">
-	</a>
-	<h2>Forming Storming Norming Performing of European Semiconductor startups 2026 - June 4<sup>th</sup> 2026</h2>
-
-			  <span></span>
-			  <span></span>
-			  <span></span>
-	  </header>
-
-
+  <a href="fnsp2026.html" class="logo-row">
+    <img src="images/FNSPeventLogoSmall.png"        alt="FNSP Logo">
+    <img src="images/chipstartEuLogo.jpg"            alt="ChipStart EU Logo">
+    <img src="images/EuroCDPLogo.jpg"                alt="EuroCDP Logo">
+    <img src="images/mscc-logo_full-colour.png"      alt="MSCC Logo">
+    <img src="images/EN_Co-fundedbytheEU_RGB_POS.png" alt="EU Co-funded Logo">
+  </a>
+  <h2>Forming Storming Norming Performing of European Semiconductor Startups 2026, June 4<sup>th</sup> 2026</h2>
+</header>
 
 <br>
-<img src="images/fsnp2026agenda.png";single=true&amp;widget=true&amp;headers=false" "></img>
 
-
-
+<img
+  class="agenda-img"
+  src="images/fsnp2026agenda.png"
+  alt="FSNP 2026 Agenda"
+>
 
 </body>
 </html>
