@@ -82,8 +82,9 @@
     /* ── Mobile breakpoint ── */
     @media (max-width: 480px) {
       .logo-row img {
-        height: 44px;           /* smaller logos on phones */
-      }
+    height: auto;
+    width: clamp(40px, 15vw, 60px);  /* fluid: scales with screen width */
+  }
 header h2 {
     font-size: 0.85rem;
     line-height: 1.3;
