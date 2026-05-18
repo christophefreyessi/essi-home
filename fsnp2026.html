@@ -80,18 +80,18 @@
     }
 
     /* ── Mobile breakpoint ── */
-	@media (orientation: landscape) and (max-height: 800px) {
+	@media (orientation: landscape) and (max-height: 50px) {
 		.logo-row {
 			flex-wrap: nowrap;
 		}
 
 		.logo-row img {
 			height: auto;
-			width: clamp(24x, 10vw, 30px);  /* narrower in landscape */
+			width: clamp(24x, 10vw, 24px);  /* narrower in landscape */
 		}
 
 		.logo-mscc {
-			width: clamp(20px, 8vw, 24px);  
+			width: clamp(20px, 8vw, 20px);  
 		}
 	}
     @media (max-width: 480px) {
