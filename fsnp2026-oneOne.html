@@ -320,7 +320,7 @@
 <div class="section">
   <div class="scroll-note">
     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg>
-    Make sure to scroll down to 18:25 when picking your slot.
+    After you click 'Book 5 minutes' make sure to scroll down to 18:25.
   </div>
   <div class="grid">
 
@@ -486,5 +486,18 @@
   EU Semiconductor FSNP &nbsp;·&nbsp; 4 June 2026
 </div>
 
+<script>
+  const cutoff = new Date('2026-05-21T23:59:59');
+  if (new Date() > cutoff) {
+    const label = document.querySelector('.event-label');
+    label.querySelector('.dot').style.background = '#e84a35';
+    label.style.color = '#e84a35';
+    label.style.background = 'rgba(232,74,53,0.1)';
+    label.style.borderColor = 'rgba(232,74,53,0.25)';
+    label.childNodes[label.childNodes.length - 1].textContent = 'Closed for booking';
+    document.querySelector('.grid').style.display = 'none';
+  }
+</script>
+ 
 </body>
 </html>
