@@ -489,8 +489,11 @@
 </div>
 
 <script>
-  const cutoff = new Date('2026-05-21T23:59:59');
-  if (new Date() > cutoff) {
+  const cutoff = new Date('2026-05-29T23:59:59');
+  const params = new URLSearchParams(window.location.search);
+  const override = params.get('status');
+  const isClosed = override === 'closed' || (override !== 'open' && new Date() > cutoff);
+  if (isClosed) {
     const label = document.querySelector('.event-label');
     label.querySelector('.dot').style.background = '#e84a35';
     label.style.color = '#e84a35';
@@ -500,6 +503,7 @@
     document.querySelector('.grid').style.display = 'none';
   }
 </script>
+
  
 </body>
 </html>
