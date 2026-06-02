@@ -500,8 +500,8 @@
   const cutoff = new Date('2026-05-29T23:59:59');
   const params = new URLSearchParams(window.location.search);
   const override = params.get('status');
-  const isClosed = override === 'closed' ||  new Date() > cutoff;
-  if (isClosed && ! override === 'open') {
+  const isClosed = override === 'closed' || (override !== 'open' && new Date() > cutoff);
+  if (isClosed) {
     const label = document.querySelector('.event-label');
     label.querySelector('.dot').style.background = '#e84a35';
     label.style.color = '#e84a35';
